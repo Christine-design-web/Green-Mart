@@ -23,7 +23,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
         rel="stylesheet">
-
+    
 </head>
 
 <body>
@@ -359,18 +359,19 @@
         <div class="product-angles">
 
             <div id="angles">
-                <img src="/Green-Mart-main/images/product-thumbnail-85.jpg" alt="">
-                <img src="/Green-Mart-main/images/product-thumbnail-86.jpg" alt="">
-                <img src="/Green-Mart-main/images/product-thumbnail-87.jpg" alt="">
-                <img src="/Green-Mart-main/images/product-thumbnail-88.jpg" alt="">
-                <img src="/Green-Mart-main/images/product-thumbnail-89.jpg" style="margin-bottom: 0;" alt="">
+                <img src="/Green-Mart-main/images/product-thumbnail-85.jpg" alt="" onclick="changeMainPhoto(1)">
+                <img src="/Green-Mart-main/images/product-thumbnail-86.jpg" alt="" onclick="changeMainPhoto(2)">
+                <img src="/Green-Mart-main/images/product-thumbnail-87.jpg" alt="" onclick="changeMainPhoto(3)">
+                <img src="/Green-Mart-main/images/product-thumbnail-88.jpg" alt="" onclick="changeMainPhoto(4)">
+                <img src="/Green-Mart-main/images/product-thumbnail-89.jpg" style="margin-bottom: 0;" alt=""
+                    onclick="changeMainPhoto(5)">
 
             </div>
 
         </div>
 
         <div class="product-photo">
-            <img src="/Green-Mart-main/images/product-large-3.jpg" alt="">
+            <img id="main-photo" src="/Green-Mart-main/images/product-large-1.jpg" alt="">
         </div>
 
         <div class="product-info">
@@ -422,11 +423,13 @@
             </div>
 
             <div class="buttons">
-                <a href="#" style="background-color: #FFC43F; color: white; border-color: #FFC43F;" class="btn btn-outline-dark btn-lg text-uppercase fs-6 rounded-1 px-4 py-3 mt-3">BUY
+                <a href="#" style="background-color: #FFC43F; color: white; border-color: #FFC43F;"
+                    class="btn btn-outline-dark btn-lg text-uppercase fs-6 rounded-1 px-4 py-3 mt-3">BUY
                     Now</a>
 
-                <a href="#" style="background-color: #212529; color: white; border-color: #212529;" class="btn btn-outline-dark btn-lg text-uppercase fs-6 rounded-1 px-4 py-3 mt-3">ADD TO CART
-                    </a>
+                <a href="#" style="background-color: #212529; color: white; border-color: #212529;"
+                    class="btn btn-outline-dark btn-lg text-uppercase fs-6 rounded-1 px-4 py-3 mt-3">ADD TO CART
+                </a>
             </div>
 
         </div>
@@ -439,6 +442,18 @@
         </div>
     </div>
 
+    <script>
+        function changeMainPhoto(photoId) {
+
+            var mainPhotoPath = "/Green-Mart-main/images/product-large-" + photoId + ".jpg";
+
+            var mainPhoto = document.getElementById("main-photo");
+            mainPhoto.src = mainPhotoPath;
+        }
+
+        
+    </script>
+
 
     <style>
         #wrapper {
@@ -450,6 +465,10 @@
             width: 175px;
         }
 
+        .product-angles img:hover {
+            cursor: pointer;
+        }
+
         .product-angles img {
             margin-right: 30px;
             margin-left: 25px;
@@ -459,17 +478,13 @@
         }
 
         .product-photo {
-            border-radius: 100;
             width: 800px;
             margin-right: 60px;
             height: 650px;
         }
 
-        .product-photo img{
-            background-color: lightblue;
-            border-radius: 100;
-            width: 650px;
-            margin-right: 60px;
+        .product-photo img {
+            width: 570px;
             height: 650px;
         }
 
@@ -477,14 +492,22 @@
             flex-direction: row;
         }
 
-        .buttons{
+        .buttons {
             margin-top: 20px;
         }
 
-        .buttons a{
+        .buttons a {
+            margin-right: 20px;
+        }
+
+        .product-info {
             margin-right: 20px;
         }
     </style>
+
+
+
+
 
 
 
